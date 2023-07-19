@@ -4,15 +4,8 @@
 # Если хотя бы в одном случае отрезок окажется больше суммы двух других, то треугольника с такими сторонами не существует.
 # Отдельно сообщить является ли треугольник разносторонним, равнобедренным или равносторонним.
 
-def check(a, b, c):
-    if (a > b + c
-            or b > a + c
-            or c > b + a):
-        print("Нет такого треугольника! Повторите ввод!")
-        return False
 
-
-def int_check(number):
+def int_check(number: str) -> int:
     try:
         return int(number)
     except ValueError:
@@ -20,7 +13,7 @@ def int_check(number):
         return int_check(input())
 
 
-def user_input():
+def user_input() -> tuple:
     print("Введите стороны треугольника:")
     a = int_check(input("a = "))
     b = int_check(input("b = "))
@@ -29,7 +22,7 @@ def user_input():
 
 
 class Triangle:
-    def __init__(self, a, b, c):
+    def __init__(self, a: int, b: int, c: int):
         self._a = a
         self._b = b
         self._c = c
@@ -42,15 +35,24 @@ class Triangle:
         else:
             self._property = "разносторонний"
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"Треугольник со сторонам: {self._a}, {self._b}, {self._c}, он {self._property}."
 
+    def check(self) -> bool:
+        if (self._a > self._b + self._c
+                or self._b > self._a + self._c
+                or self._c > self._b + self._a):
+            print("Нет такого треугольника! Повторите ввод!")
+            return False
+        return True
 
-def make_triang():
+
+def make_triang() -> Triangle:
     a, b, c = user_input()
-    if not check(a, b, c):
-        a, b, c = user_input()
     new_triang = Triangle(a, b, c)
+    while not new_triang.check():
+        a, b, c = user_input()
+        new_triang = Triangle(a, b, c)
     return new_triang
 
 

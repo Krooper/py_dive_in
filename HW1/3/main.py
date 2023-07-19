@@ -3,7 +3,7 @@
 # Сделайте ограничение на ввод отрицательных чисел и чисел больше 100 тысяч.
 
 
-def int_check(number):
+def int_check(number: str) -> int:
     try:
         return int(number)
     except ValueError:
@@ -11,24 +11,22 @@ def int_check(number):
         return int_check(input())
 
 
-def range_check(number):
+def range_check(number: str) -> int:
     number = int_check(number)
-    if 0 <= number <= 10**5:
+    low_lim = 0
+    up_lim = 10**5
+    if low_lim <= number <= up_lim:
         return number
     else:
         print("Число за пределами диапазона! Повторите ввод!")
         return range_check(input())
 
 
-def prime_num_check(number):
-    k = 0
+def prime_num_check(number: int) -> str:
     for i in range(2, number // 2 + 1):
         if number % i == 0:
-            k = k + 1
-    if k <= 0:
-        return "Число простое."
-    else:
-        return "Число не является простым."
+            return "Число не является простым."
+    return "Число простое."
 
 
 if __name__ == '__main__':
