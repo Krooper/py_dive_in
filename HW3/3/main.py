@@ -21,6 +21,7 @@ BACKPACK_CAPACITY = 1.7
 
 
 # Получилось, конечно, сложно, но как есть :)
+# Другого не придумал :(
 def backpack_kit(stuff: dict[str:int], capacity: float) -> list[list[str]]:
     # Создаем список вещей (из ключей словаря)
     stuff_lst = [item for item in stuff.keys()]
@@ -47,6 +48,7 @@ def backpack_kit(stuff: dict[str:int], capacity: float) -> list[list[str]]:
                 # Если он меньше допустимого, добавляем эту комбинацию в список
                 if counter <= capacity:
                     if len(combo) > 0:
+                        # Преобразуем в списки, чтобы не было пустых занчений в комбинациях
                         combo_lst = list(combo)
                         all_combinations.append(combo_lst)
 
