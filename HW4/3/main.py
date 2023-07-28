@@ -1,27 +1,25 @@
 # Возьмите задачу о банкомате из семинара 2.
 # Разбейте её на отдельные операции — функции.
 # Дополнительно сохраняйте все операции поступления и снятия средств в список.
+
+
+# Ниже - код из второго семинара, он уже разделен на функции, также использовано ООП
+# Код, добавляющий функционал сохранения операций, будет отмечен специальным комментарием : "НОВЫЙ КОД"
 import os
 
 
 # Затычка для сохранения
-def reader() -> tuple[int,int, list]:
+def reader() -> tuple[int,int]:
     if os.path.exists("saved.txt"):
-        line_counter = 0
-        operations = []
         with open("saved.txt", "r") as file:
             for line in file:
-                line_counter += 1
-                if line_counter == 1:
-                    money = line.split(",")[0]
-                    counter = line.split(",")[1]
-                else:
-                    operations.append(line. strip('\n'))
-        money = num_str_to_int(money)
-        counter = num_str_to_int(counter)
+                money = line.split(",")[0]
+                counter = line.split(",")[1]
+            money = num_str_to_int(money)
+            counter = num_str_to_int(counter)
     else:
-        return 0, 0, []
-    return money, counter, operations
+        return 0, 0
+    return money, counter
 
 
 # Статический метод для проверки на целое число
@@ -42,16 +40,17 @@ def num_str_to_int(number: str) -> int:
 
 class ATM:
     # Конструктор
-    def __init__(self, money_in=0, counter=0, operations=None):
+    def __init__(self, money_in=0, counter=0):
         self._money_in = money_in
         self._op_counter = counter
+        """
+        НОВЫЙ КОД НИЖЕ
+        """
+        self._operations = []
 
-        if operations is None:
-            self._operations = []
-        else:
-            self._operations = operations
-
-    # Печать
+    """
+    Печать с НОВЫМ КОДОМ НИЖЕ
+    """
     def __str__(self):
         out_str = f"На счету: {round(self._money_in, 2)} у.е.\n История операций:\n"
         for operation in self._operations:
@@ -59,20 +58,19 @@ class ATM:
 
         return out_str
 
-    # Сохранение операции
+    """
+    НОВЫЙ КОД
+    """
     def save_operation(self, operation_name: str, value: int, result: bool):
-        self._operations.append(f"Операция: {operation_name}; сумма: {value}; результат: {result}")
+        self._operations.append(f"Операция: {operation_name}, сумма: {value}, результат: {result}")
 
     # Геттеры для полей
     def get_money(self) -> int:
         return self._money_in
     def get_counter(self) -> int:
         return self._op_counter
-    def get_operations_str(self) -> str:
-        op_str = '\n'
-        for operation in self._operations:
-            op_str += f"{operation}\n"
-        return op_str
+    def get_operatios(self) -> list:
+        return self._operations
 
     # Снятие комиссии для богатых
     def rich_commission(self, percent=10, rich_factor=5_000_000) -> None:
@@ -113,9 +111,15 @@ class ATM:
             self._money_in += amount
             print(f"Вы пополнили счет на: {amount} у.е.")
             self.add_depo()
+            """
+            НОВАЯ СТРОКА КОДА НИЖЕ
+            """
             self.save_operation("Пополнение", amount, True)
         else:
             print("Сумма пополнения должна быть кратна 50 у.е. Операция отменена.")
+            """
+            НОВАЯ СТРОКА КОДА НИЖЕ
+            """
             self.save_operation("Пополнение", amount, False)
         print(self)
 
@@ -126,14 +130,19 @@ class ATM:
             commission = self.commission_calc(amount)
             if amount + commission > self._money_in:
                 print("На счете недостаточно средств. Введите другую сумму.")
-                self.save_operation("Снятие", amount, False)
             else:
                 self._money_in -= amount + commission
                 print(f"Снято: {amount} у.е., комиссия за снятие: {commission}.")
                 self.add_depo()
+                """
+                НОВАЯ СТРОКА КОДА НИЖЕ
+                """
                 self.save_operation("Снятие", amount, True)
         else:
             print("Сумма снятия должна быть кратна 50 у.е. Операция отменена.")
+            """
+            НОВАЯ СТРОКА КОДА НИЖЕ
+            """
             self.save_operation("Снятие", amount, False)
 
         print(self)
@@ -165,7 +174,7 @@ def main_menu(atm: ATM):
         print(atm)
         print("До свидания!")
         with open("saved.txt", "w+") as file:
-            file.write(f"{atm.get_money()}, {atm.get_counter()}, {atm.get_operations_str()}")
+            file.write(f"{atm.get_money()}, {atm.get_counter()}")
         exit()
 
     else:
@@ -174,6 +183,6 @@ def main_menu(atm: ATM):
 
 
 if __name__ == '__main__':
-    saved_money, saved_counter, saved_operations = reader()
-    new_ATM = ATM(saved_money, saved_counter, saved_operations)
+    saved_money, saved_counter = reader()
+    new_ATM = ATM(saved_money, saved_counter)
     main_menu(new_ATM)
