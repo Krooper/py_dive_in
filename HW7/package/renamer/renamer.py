@@ -1,10 +1,14 @@
 import os
 
+__all__ = ['rename']
+
 """
 Ищем все файлы в текущей директории с определенным расширением
 """
 def file_finder(extension: str) -> list[str]:
-    return [_ for _ in os.listdir(os.getcwd()) if _.endswith(fr"{extension}")]
+    cur_dir = os.getcwd()
+    to_return = [_ for _ in os.listdir(os.getcwd()) if _.endswith(f"{extension}")]
+    return to_return
 
 
 """
@@ -58,7 +62,8 @@ def rename(wanted_name: str, count_nums: int, extension_old: str, extension_new:
     # Переименование файлов
     for i in range(len(files_to_rename)):
         try:
-            os.rename(files_to_rename[i], new_names_lst[i])
+            new_file = f'{os.getcwd()}/{files_to_rename[i]}'
+            os.rename(new_file, new_names_lst[i])
         except FileExistsError as e:
             print(e)
             exit()

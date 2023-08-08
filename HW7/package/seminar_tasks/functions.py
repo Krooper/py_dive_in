@@ -2,7 +2,12 @@ import random
 import string
 import os
 import shutil
-import constraints as ct
+from package.seminar_tasks.constraints import *
+
+__all__ = ['add_nums_to_file', 'names_generator',
+           'mult_save', 'extension_creator',
+           'many_extensions_creator', 'in_folder_creator',
+           'files_sorter']
 
 
 """
@@ -13,7 +18,7 @@ def add_nums_to_file(line_num: int, file: str) -> None:
         for i in range(line_num):
             num1 = random.randint(-1000, 1000)
             num2 = round(random.uniform(-1000, 1000), 2)
-            f.write(f"\n{num1}|{num2}")
+            f.write(f"{num1}|{num2}\n")
 
 
 """
@@ -241,11 +246,11 @@ def mv_file(old_path: str, folder_name: str, file: str):
 def files_sorter(path: str) -> None:
     files = get_files(path)
     for file in files:
-        if get_file_ext(file) in ct.TEXT_EXTENSIONS:
+        if get_file_ext(file) in TEXT_EXTENSIONS:
             mv_file(path, 'texts', file)
-        elif get_file_ext(file) in ct.IMAGE_EXTENSIONS:
+        elif get_file_ext(file) in IMAGE_EXTENSIONS:
             mv_file(path, 'images', file)
-        elif get_file_ext(file) in ct.VIDEO_EXTENSIONS:
+        elif get_file_ext(file) in VIDEO_EXTENSIONS:
             mv_file(path, 'videos', file)
 
 
