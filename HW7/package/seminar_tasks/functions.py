@@ -246,12 +246,13 @@ def mv_file(old_path: str, folder_name: str, file: str):
 def files_sorter(path: str) -> None:
     files = get_files(path)
     for file in files:
-        if get_file_ext(file) in TEXT_EXTENSIONS:
-            mv_file(path, 'texts', file)
-        elif get_file_ext(file) in IMAGE_EXTENSIONS:
-            mv_file(path, 'images', file)
-        elif get_file_ext(file) in VIDEO_EXTENSIONS:
-            mv_file(path, 'videos', file)
+        if os.path.isfile(file):
+            if get_file_ext(file) in TEXT_EXTENSIONS:
+                mv_file(path, 'texts', file)
+            elif get_file_ext(file) in IMAGE_EXTENSIONS:
+                mv_file(path, 'images', file)
+            elif get_file_ext(file) in VIDEO_EXTENSIONS:
+                mv_file(path, 'videos', file)
 
 
 if __name__ == '__main__':

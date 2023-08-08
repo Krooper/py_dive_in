@@ -2,26 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cbd7f555-df9a-4077-8f46-ac2cd10ef0d6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/package/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package/.idea/package.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package/constraints.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package/functions.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package/names.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package/names_and_nums.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package/nums.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/renamer/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/renamer/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/renamer/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/renamer/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/renamer/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/renamer/.idea/renamer.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/renamer/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/renamer/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package/seminar_tasks/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/package/seminar_tasks/functions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,8 +75,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/package/renamer/renamer.py</url>
-          <line>63</line>
+          <line>65</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/package/renamer/renamer.py</url>
+          <line>10</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/package/seminar_tasks/functions.py</url>
+          <line>236</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
