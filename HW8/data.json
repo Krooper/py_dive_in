@@ -1,0 +1,56 @@
+{
+	"D:\\WhatsAppPortable\\App\\AppInfo\\appicon.ico": {
+		"name": "appicon.ico",
+		"parent": "AppInfo",
+		"type": "file",
+		"size": 110841
+	},
+	"D:\\WhatsAppPortable\\App\\AppInfo\\appicon_128.png": {
+		"name": "appicon_128.png",
+		"parent": "AppInfo",
+		"type": "file",
+		"size": 10640
+	},
+	"D:\\WhatsAppPortable\\App\\AppInfo\\appicon_16.png": {
+		"name": "appicon_16.png",
+		"parent": "AppInfo",
+		"type": "file",
+		"size": 843
+	},
+	"D:\\WhatsAppPortable\\App\\AppInfo\\appicon_256.png": {
+		"name": "appicon_256.png",
+		"parent": "AppInfo",
+		"type": "file",
+		"size": 31484
+	},
+	"D:\\WhatsAppPortable\\App\\AppInfo\\appicon_32.png": {
+		"name": "appicon_32.png",
+		"parent": "AppInfo",
+		"type": "file",
+		"size": 1892
+	},
+	"D:\\WhatsAppPortable\\App\\AppInfo\\appicon_75.png": {
+		"name": "appicon_75.png",
+		"parent": "AppInfo",
+		"type": "file",
+		"size": 5738
+	},
+	"D:\\WhatsAppPortable\\App\\AppInfo\\appinfo.ini": {
+		"name": "appinfo.ini",
+		"parent": "AppInfo",
+		"type": "file",
+		"size": 524
+	},
+	"D:\\WhatsAppPortable\\App\\AppInfo\\Launcher": {
+		"name": "Launcher",
+		"parent": "AppInfo",
+		"type": "dir",
+		"size": 863
+	},
+	"D:\\WhatsAppPortable\\App\\AppInfo\\Launcher\\WhatsAppPortable.ini": {
+		"name": "WhatsAppPortable.ini",
+		"parent": "Launcher",
+		"type": "file",
+		"size": 863
+	}
+}
