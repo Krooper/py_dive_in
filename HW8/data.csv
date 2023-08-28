@@ -1,0 +1,10 @@
+path,name,parent,type,size
+D:\WhatsAppPortable\App\AppInfo\appicon.ico,appicon.ico,AppInfo,file,110841
+D:\WhatsAppPortable\App\AppInfo\appicon_128.png,appicon_128.png,AppInfo,file,10640
+D:\WhatsAppPortable\App\AppInfo\appicon_16.png,appicon_16.png,AppInfo,file,843
+D:\WhatsAppPortable\App\AppInfo\appicon_256.png,appicon_256.png,AppInfo,file,31484
+D:\WhatsAppPortable\App\AppInfo\appicon_32.png,appicon_32.png,AppInfo,file,1892
+D:\WhatsAppPortable\App\AppInfo\appicon_75.png,appicon_75.png,AppInfo,file,5738
+D:\WhatsAppPortable\App\AppInfo\appinfo.ini,appinfo.ini,AppInfo,file,524
+D:\WhatsAppPortable\App\AppInfo\Launcher,Launcher,AppInfo,dir,863
+D:\WhatsAppPortable\App\AppInfo\Launcher\WhatsAppPortable.ini,WhatsAppPortable.ini,Launcher,file,863
