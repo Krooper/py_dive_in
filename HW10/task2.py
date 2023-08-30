@@ -62,13 +62,10 @@ class Factory:
 if __name__ == '__main__':
     new_bird = Bird("Kesha")
     print(new_bird)
-
     new_fish = Fish("Dory")
     print(new_fish)
-
     new_mammal = Mammal("Manny")
     print(new_mammal)
-
 
     print(Factory.create_animal('bird', "Factory_Kesha"))
     print(Factory.create_animal('fish', "Factory_Dory"))
