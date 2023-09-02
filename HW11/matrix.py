@@ -1,13 +1,21 @@
+"""Модуль содержит класс Матрица."""
+
+
 class Matrix:
+    """Класс Матрица."""
+
     def __init__(self, num_lst: list[list[int]]):
+        """Конструктор принимает двумерный массив целых чисел."""
         self.rows = len(num_lst[0])
         self.columns = len(num_lst)
         self.elements = num_lst
 
     def __str__(self):
+        """Метод печати."""
         return '\n'.join('\t'.join(map(str, row)) for row in self.elements)
 
     def __eq__(self, other):
+        """Метод проверки на равенство."""
         if self.rows == other.rows and self.columns == other.columns:
             flag_list = [self.elements[i][j] == other.elements[i][j]
                          for j in range(self.rows) for i in range(self.columns)]
@@ -16,17 +24,20 @@ class Matrix:
         return True
 
     def __add__(self, other):
+        """Метод вычисления суммы двух матриц."""
         if self.rows == other.rows and self.columns == other.columns:
             return Matrix([list(map(sum, zip(*i))) for i in zip(self.elements, other.elements)])
         return None
 
     def __sub__(self, other):
+        """Метод вычисления разности двух матриц."""
         if self.rows == other.rows and self.columns == other.columns:
             return Matrix([[self.elements[i][j] - other.elements[i][j]
                             for j in range(self.rows)] for i in range(self.columns)])
         return None
 
     def __mul__(self, other):
+        """Метод вычисления произведения двух матриц."""
         if self.rows == other.columns:
             return Matrix([list(sum(a * b for a, b in zip(row_self, col_other)) for col_other in
                                 zip(*other.elements)) for row_self in self.elements])
