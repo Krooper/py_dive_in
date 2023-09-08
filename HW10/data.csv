@@ -1,0 +1,5 @@
+path,name,parent,type,size
+D:\test\appicon.ico,appicon.ico,test,file,110841
+D:\test\appinfo.ini,appinfo.ini,test,file,524
+D:\test\Launcher,Launcher,test,dir,863
+D:\test\Launcher\WhatsAppPortable.ini,WhatsAppPortable.ini,Launcher,file,863

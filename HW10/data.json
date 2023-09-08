@@ -1,0 +1,26 @@
+{
+	"D:\\test\\appicon.ico": {
+		"name": "appicon.ico",
+		"parent": "test",
+		"type": "file",
+		"size": 110841
+	},
+	"D:\\test\\appinfo.ini": {
+		"name": "appinfo.ini",
+		"parent": "test",
+		"type": "file",
+		"size": 524
+	},
+	"D:\\test\\Launcher": {
+		"name": "Launcher",
+		"parent": "test",
+		"type": "dir",
+		"size": 863
+	},
+	"D:\\test\\Launcher\\WhatsAppPortable.ini": {
+		"name": "WhatsAppPortable.ini",
+		"parent": "Launcher",
+		"type": "file",
+		"size": 863
+	}
+}
